@@ -98,3 +98,15 @@ function saveScore() {
     highScoresList.appendChild(listItem);
     initialsInput.value = '';
 }
+
+// Function to start the timer
+function startTimer() {
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            endQuiz();
+        }
+        document.getElementById('time-left').textContent = timeLeft;
+    }, 1000);
+}
